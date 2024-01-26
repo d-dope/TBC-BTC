@@ -32,3 +32,53 @@ faqs.forEach(faq => {
   });
 });
 
+
+
+
+var current = 0,
+    slides = document.querySelectorAll(".test-slide"),
+    indicatorsContainer = document.querySelector(".indicators");
+
+// Create indicators
+for (var i = 0; i < slides.length; i++) {
+    var indicator = document.createElement("span");
+    indicator.classList.add("indicator");
+    indicator.setAttribute("data-slide-to", i);
+    indicator.addEventListener("click", function () {
+        current = parseInt(this.getAttribute("data-slide-to"));
+        showSlide();
+    });
+    indicatorsContainer.appendChild(indicator);
+}
+
+// Show initial slide
+showSlide();
+
+setInterval(function () {
+    current = (current < slides.length - 1) ? current + 1 : 0;
+    showSlide();
+}, 3000);
+
+function showSlide() {
+    for (var i = 0; i < slides.length; i++) {
+        slides[i].classList.remove("active");
+    }
+    slides[current].classList.add("active");
+
+    updateIndicators();
+}
+
+function updateIndicators() {
+    var indicators = document.querySelectorAll(".indicator");
+    for (var i = 0; i < indicators.length; i++) {
+        indicators[i].classList.remove("active");
+    }
+    indicators[current].classList.add("active");
+}
+
+
+
+
+
+
+
