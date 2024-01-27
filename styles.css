@@ -10,13 +10,25 @@
 }
 
 
+@font-face {
+  font-family: 'NotoSansGeorgian-Bold';
+  src: url('assets/static/NotoSansGeorgian-Bold.ttf');
+}
+
+@font-face {
+  font-family: 'NotoSansGeorgian-Light';
+  src: url('assets/static/NotoSansGeorgian-Light.ttf');
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     
 }
-  
+
+
+
   /****************** header styling ********************/
 
 header {
@@ -28,12 +40,14 @@ header {
     background: rgb(26, 30, 31);
     align-items: center;
     width: 100%;
+  
 } 
 .headerDiv {
     display: flex;
     align-items: center;
     justify-content: space-between; 
-    width: 64%;
+    width: 59%;
+    
 }
 .headerImg {
     width: 60px;
@@ -43,6 +57,7 @@ header {
 
 .logoAc span {
     cursor: pointer;
+    font-family: 'NotoSansGeorgian-Bold';
 }
 
 .nav {
@@ -85,6 +100,7 @@ header {
     padding: 10px 0;
     color: #FFFFFF;
     text-decoration: none;
+    font-family: 'NotoSansGeorgian-Light';
   }
   
   .nav__link a:hover {
@@ -116,7 +132,7 @@ header {
   }
 
   .titleDiv {
-    width: 64%;
+    width: 59%;
     display: flex;
 
     display: flex;
@@ -144,7 +160,7 @@ header {
   }
 
    .desc {
-    width: 64%;
+    width: 59%;
     
   } 
 
@@ -183,7 +199,7 @@ header {
  }
 
  .trainingCourses {
-    width: 64%;
+    width: 59%;
     margin-top: 40px;
     margin-bottom: 70px;
     
@@ -192,6 +208,7 @@ header {
  .trainingCourses h1 {
     color: #F4F4F4;
     font-size: 24px;
+    font-family: 'NotoSansGeorgian-Regular';
  }
 
  .cardsDiv {
@@ -202,11 +219,12 @@ header {
  }
 
  .allCards {
-    width: 64%;
+    width: 59%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     row-gap: 25px;
+    margin-bottom: 57px;
  }
 
  .singleCard {
@@ -229,46 +247,72 @@ header {
 
  .cardTitle {
     color: #F4F4F4;
+    font-family: 'NotoSansGeorgian-regular';
+    font-size: 18px;
  }
 
  .cardText {
     color: #F4F4F4;
+    font-family: 'NotoSansGeorgian-regular';
+    font-size: 14px;
+    margin-top: 30px;
+
  }
 
  .courseDetails {
     text-decoration: none;
     color: #00A3E0;
+    margin-top: -9px;
  }
 
- /* CAROUSEl************************** */
+.arrowDetails {
+  display: flex;
+  align-items: center;
+  font-family: 'NotoSansGeorgian-regular';
+  font-size: 16px;
+  margin-top: 95px;
+  gap: 10px;
+}
 
-.carousel-container {
+
+
+ /* CAROUSEl************************** */
+ .carousel-container {
   width: 100%;
   height: 365px;
   background-color: #2B2B2B;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
+
+.ppWords {
+  width: 59%;
+  display: flex;
+  justify-content: start;
+  margin-bottom: 270px;  
+  font-size: 24px;
+  color: #F4F4F4;
+  font-family: 'NotoSansGeorgian-regular';
+}
 
 .test {
   width: 59%;
-  /* height: 100%; */
+  height: 70px;
   object-fit: cover;
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
+  margin-right: 145px; 
 }
  .test-slide {
   width: 59%;
-  /* height: 100%; */
-   display: flex; 
-  /* justify-content: space-between;  */
-
+  height: 100%;
+  display: flex; 
+  justify-content: center;
   position: absolute;
   transition: opacity 0.5s ease-in;
   opacity: 0;
+  margin-bottom: 10px; 
 }
 
 .test-slide.active {
@@ -277,41 +321,103 @@ header {
 .imgs {
   display: flex;
   align-items: center;
-  width: 59%;
+  width: 100%;
+  height: 70px;
+}
+.forImages {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+ 
 }
 
+
+.forUFC {
+  display: flex;
+  justify-content: center;
+  width: 227px;
+  height: 64px;
+}
 .ufcDiv {
   display: flex;
   justify-content: center;
-  align-self: center;
+  align-items: center;
+  /* width: 59%; */
+  height: 100%; /* Adjust the height as needed */
 }
 
 .indicators {
   position: absolute;
-  bottom: 10px;
+  bottom: 105px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
+  gap: 3px;
 }
 
 .indicator {
-  width: 10px;
-  height: 10px;
+  width: 6px;
+  height: 6px;
   margin: 0 5px;
-  background-color: #aaa;
+  background-color: #E8E6E6;
   border-radius: 50%;
   cursor: pointer;
+
+
 }
 
 .indicator.active {
-  background-color: #333;
+  background-color: #E8E6E6;
 }
 
 
- 
+.prev-btn,
+.next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    padding: 10px;
+    cursor: pointer;
+    background-color: #2B2B2B;
+    color: #F4F4F4;
+    border: none;
+    border-radius: 5px;
+   
+}
+
+.prev-btn img,
+.next-btn img {
+    width: 54px; 
+    height: 54px;
+    filter: invert(100%);
+}
 
 
+.prev-btn {
+    left: 100px;
+    
+}
 
+.next-btn {
+    right: 100px;
+}
+
+.lising {
+  width: 312px;
+  height: 95px;
+}
+
+.space {
+  width: 241px;
+  height: 80px;
+}
+
+.tineti {
+  width: 250px;
+  height: 45px;
+}
 
 
 /* FAQ ********************** */
@@ -331,18 +437,20 @@ section
   min-height: 485px;
 }
 
-.title
-{
-  font-size: 3rem;
+.title2 {
   margin: 2rem 0;
+  font-size: 24px;
+  color: #F4F4F4;
+  font-family: 'NotoSansGeorgian-regular';
 }
 
 .faq
 {
   /* max-width: 700px; */
+  /* min-height: 50px; */
   margin-top: 2rem;
   padding-bottom: 1rem;
-  border-bottom: 2px solid #353131;
+  border-bottom: 1px solid #353131;
   cursor: pointer;
 }
 
@@ -356,10 +464,13 @@ section
 .question h3
 {
   font-size: 18px;
+  margin-bottom: 14px;
+  font-family: 'NotoSansGeorgian-light';
 }
 
 .question svg {
   margin-right: 7px;
+  margin-bottom: 14px;
 }
 
 .answer
@@ -372,11 +483,20 @@ section
 .answer p
 {
  color:#F4F4F4;
+ font-size: 14px;
+ font-family: 'NotoSansGeorgian-light';
 }
 
 .faq.active .answer
 {
   max-height: 300px;
+}
+
+.stages {
+  color:#F4F4F4;
+  font-size: 14px;
+  font-family: 'NotoSansGeorgian-light';
+  margin-left: 13px;
 }
 
 
@@ -391,20 +511,19 @@ section
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: -15px;
 }
 
-.title {
-  font-size: 24px;
-  color: #F4F4F4;
-}
 
 .allQues {
-  font-size: 24px;
+  font-size: 20px;
   color: #00A3E0; 
+  font-family: 'NotoSansGeorgian-regular';
 }
 
 .question {
   color: #F4F4F4;
+  
 }
 
 
@@ -421,7 +540,7 @@ footer {
 .tbcAndFb {
   display: flex;
   justify-content: space-between;
-  width: 64%;
+  width: 59%;
   margin-top: 64px;
 }
 
@@ -433,6 +552,7 @@ footer {
 .fbAndYt {
   display: flex;
   gap: 10px;
+  cursor: pointer;
 }
 
 .fbAndYt img {
@@ -444,8 +564,15 @@ footer {
   color: #F4F4F4;
   display: flex;
   justify-content: center;
-  width: 64%;
-  
+  font-family: 'NotoSansGeorgian-regular';
+  font-size: 14px;
+}
+
+.c {
+  display: flex; 
+  width: 59%;
+  margin-top: 25px;
+  margin-bottom: 10px;
 }
 
 .allRights .spanC {
@@ -467,8 +594,10 @@ footer {
 .rules {
   display: flex;
   justify-content: space-between;
-  width: 64%;
+  width: 59%;
   color: #F4F4F4;
+  font-family: 'NotoSansGeorgian-regular';
+  font-size: 14px;
 }
 
 .rules button {
@@ -478,7 +607,17 @@ footer {
   border-radius: 6px;
   color: #F4F4F4;
   align-items: center;
+  margin-top: -10px;
+  font-family: 'NotoSansGeorgian-regular';
+  font-size: 14px;
 
+}
+
+.rules button:hover {
+  background-color: #F4F4F4;
+  color: #161616;
+  transition: 0.5s;
+  cursor: pointer;
 }
 
 
