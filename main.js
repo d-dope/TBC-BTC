@@ -1,9 +1,19 @@
-const hamburger = document.querySelector('.hamburger');
-const navLink = document.querySelector('.nav__link');
+function toggleNav() {
+  var navContainer = document.getElementById("mobileNavContainer");
 
-hamburger.addEventListener('click', () => {
-  navLink.classList.toggle('hide');
-});
+  if (navContainer.style.right === "0px") {
+    // If navigation is visible, hide it
+    navContainer.style.right = "-250px";
+  } else {
+    // If navigation is hidden, show it
+    navContainer.style.right = "0";
+  }
+}
+
+function closeNav() {
+  var navContainer = document.getElementById("mobileNavContainer");
+  navContainer.style.right = "-250px";
+}
 
 
 const faqs = document.querySelectorAll(".faq");
@@ -31,6 +41,29 @@ faqs.forEach(faq => {
     });
   });
 });
+
+const header = document.querySelector('header');
+const main = document.querySelector('main');
+
+window.addEventListener('scroll', () => {
+    const scrollPosition = window.scrollY;
+
+    if (scrollPosition > main.offsetTop) {
+        header.classList.add('fixed-header');
+    } else {
+        header.classList.remove('fixed-header');
+    }
+});
+
+// Ensure the header parameters are restored when returning to the top
+window.addEventListener('scroll', () => {
+    const scrollPosition = window.scrollY;
+
+    if (scrollPosition === 0) {
+        header.classList.remove('fixed-header');
+    }
+});
+
 
 
 

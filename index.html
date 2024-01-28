@@ -13,30 +13,33 @@
 </head>
 <body>
     
-    <header>
-        <div class="headerDiv">
-            <div class="logoAc"> <img class="headerImg" src="assets/images/tbclogo.webp" alt=""> <span>x აკადემია</span> </div>
-      
-            <nav class="nav">
-                <!-- <a href="/" class="logo">logo</a> -->
-        
-                <div class="hamburger">
-                  <span class="line"></span>
-                  <span class="line"></span>
-                  <span class="line"></span>
-                </div>
-        
-                <div class="nav__link hide">
-                  <a href="#">მთავარი</a>
-                  <a href="#">TBC IT</a>
-                  <a href="#">TBC x USAID</a>
-                  <a href="#">რისკები</a>
-                </div>
-              </nav>
+  <header>
+    <div class="headerDiv">
+      <div class="logoAc">
+        <img class="headerImg" src="assets/images/tbclogo.webp" alt="">
+        <span>x აკადემია</span>
+      </div>
 
-        </div>
-        
-    </header>
+      <!-- Mobile navigation button -->
+      <button class="hamburger" onclick="toggleNav()">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </button>
+    
+
+    <!-- Navigation menu container -->
+    <div class="navContainer" id="mobileNavContainer">
+      <button class="closeBtn" onclick="closeNav()"><img src="assets/images/close_FILL0_wght400_GRAD0_opsz24.svg" alt=""></button>
+      <nav id="mobileNav">
+        <a href="#">მთავარი</a>
+        <a href="#">TBC IT</a>
+        <a href="#">TBC x USAID</a>
+        <a href="#">რისკები</a>
+      </nav>
+    </div>
+  </div>
+  </header>
 
 
     <main>
@@ -198,7 +201,7 @@
       <div class="test-slide" data-slide-index="0">
         <div class="forImages">
           <div class="imgs">
-            <img class="test" src="assets/images/usaid.webp" alt="Fill Murray">
+            <img class="test usaid" src="assets/images/usaid.webp" alt="Fill Murray">
             <img class="test space" src="assets/images/space.webp" alt="Place Cage">
             <img class="test tineti" src="assets/images/tineti.webp" alt="Place Sheen">
           </div>        
@@ -209,7 +212,7 @@
       <div class="test-slide" data-slide-index="1">
  <div class="forImages">
   <div class="imgs">
-    <img class="test" src="assets/images/Tegeta.webp" alt="Fill Murray">
+    <img class="test tegeta" src="assets/images/Tegeta.webp" alt="Fill Murray">
     <img class="test" src="assets/images/spectre.webp" alt="Place Cage">
     <img class="test lising" src="assets/images/tbcLising.webp" alt="Place Sheen">
   </div>

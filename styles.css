@@ -33,7 +33,6 @@
 
 header {
     height: 84px;
-   
     display: flex;
     justify-content: center;
     border-bottom: 1px solid #E4E3EB;
@@ -42,11 +41,19 @@ header {
     width: 100%;
   
 } 
+
+/* .headerMainDiv {
+  display: flex;
+  width: 59%;
+  align-items: center;
+
+} */
+
 .headerDiv {
     display: flex;
     align-items: center;
     justify-content: space-between; 
-    width: 59%;
+    width: 59%; 
     
 }
 .headerImg {
@@ -58,65 +65,54 @@ header {
 .logoAc span {
     cursor: pointer;
     font-family: 'NotoSansGeorgian-Bold';
+    color: #F4F4F4;
+    font-size: 20px;
+    margin-top: 5px;
 }
 
-.nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  
-  }
-  
-  .logo {
-    font-size: 1.8rem;
-    color: rgb(5, 5, 116);
-    padding-left: 20px;
-  }
-  
-  .hamburger {
-    padding-right: 20px;
-    cursor: pointer;
-  }
-  
-  .hamburger .line {
-    display: block;
-    width: 40px;
-    height: 5px;
-    margin-bottom: 10px;
-    background-color: black;
-  }
-  
-  .nav__link {
-    position: fixed;
-    width: 94%;
-    top: 5rem;
-    left: 18px;
-    background-color: lightblue;
-  }
-  
-  .nav__link a {
-    display: block;
-    text-align: center;
-    padding: 10px 0;
-    color: #FFFFFF;
-    text-decoration: none;
-    font-family: 'NotoSansGeorgian-Light';
-  }
-  
-  .nav__link a:hover {
-    color: #00A3E0;
-    transition: 0.5s;
-  }
-  
-  .hide {
-    display: none;
-  } 
 
-  .nav__link :nth-child(3) {
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  font-size: 15px;
+
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 20px;
+  font-family: 'NotoSansGeorgian-Light';
+} 
+
+
+  nav :nth-child(3) {
     color: #00A3E0; 
   }
   
+  .fixed-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(26, 30, 31, 0.9); /* Adjust the alpha value to control the transparency */
+    z-index: 1000; /* Ensure the header is on top of other elements */
+    transition: background 0.3s ease; /* Add a smooth transition effect */
+}
 
+.closeBtn {
+  display: none; 
+}
+
+.hamburger {
+  display: none;
+}
+
+.logoAc {
+  display: flex;
+  align-items: center;  
+}
   /****************** main styling ********************/
 
 
@@ -149,7 +145,7 @@ header {
   /****************** description styling ********************/
  
   .descDiv {
-    height: 465px;
+    min-height: 465px;
     width: 100%;
     background-color: #2B2B2B;
     display: flex;
@@ -230,14 +226,14 @@ header {
  .singleCard {
     border: 0.5px solid #555555;
     border-radius: 7px;
-    height: 415px;  
+    min-height: 415px;  
     width: 30.5%;
  }
 
  .singleCard img {
     width: 100%;
     /* width: 300px; */
-    height: 150px;
+    min-height: 150px;
     border-radius: 7px;  
  }
 
@@ -272,6 +268,7 @@ header {
   font-size: 16px;
   margin-top: 95px;
   gap: 10px;
+  cursor: pointer;
 }
 
 
@@ -279,7 +276,7 @@ header {
  /* CAROUSEl************************** */
  .carousel-container {
   width: 100%;
-  height: 365px;
+  min-height: 365px;
   background-color: #2B2B2B;
   display: flex;
   justify-content: center;
@@ -343,8 +340,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* width: 59%; */
-  height: 100%; /* Adjust the height as needed */
+  height: 100%; 
 }
 
 .indicators {
@@ -380,10 +376,11 @@ header {
     font-size: 16px;
     padding: 10px;
     cursor: pointer;
-    background-color: #2B2B2B;
+    background: none;
     color: #F4F4F4;
     border: none;
     border-radius: 5px;
+    
    
 }
 
@@ -418,6 +415,8 @@ header {
   width: 250px;
   height: 45px;
 }
+
+
 
 
 /* FAQ ********************** */
@@ -528,7 +527,7 @@ section
 
 
 footer {
-  height: 228px;
+  min-height: 228px;
   background-color: #1A1E1F;
 }
 
@@ -680,45 +679,315 @@ footer {
 
 
 
-@media  (min-width: 767px) {
+@media screen and (min-width: 374px) and (max-width: 767px) {
 
-    /* .logoAc span{
-        display: none;
-    } */
-
-    .nav__link {
-      display: block;
-      position: static;
-      width: auto;
-      margin-right: 20px;
-      background: none;
-    }
   
-    .nav__link a {
-      display: inline-block;
-      padding: 15px 20px;
-    }
-  
-    .hamburger {
-      display: none;
-    }
-
-   
+  header {
+    height: auto;
+    display: flex;
   }
 
+  .headerDiv {
+    /* flex-direction: column; */
+    width: 100%;
+    padding: 5px 10px;
+  }
 
-  @media only screen and (min-width: 768px) and (max-width: 1023px) { 
+  .headerImg {
+    margin-bottom: 10px;
+  }
 
+  nav {
+    display: none; /* Hide the nav by default */
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  nav a {
+    margin: 5px 0;
+  }
+
+  .fixed-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(26, 30, 31, 0.9);
+    transition: background 0.3s ease;
+  }
+
+  /* Style for the hamburger icon button */
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 10px;
+  }
+
+  .line {
+    height: 4px;
+    width: 30px;
+    background-color: #fff;
+    margin: 6px 0;
+  }
  
-
-  }
-
+  
 
   .logoAc {
     display: flex;
     align-items: center;
-    color: #FFFFFF;
+  }
+
+  .logoAc span {
+    margin-top: -4px;
+  }
+
+  .navContainer {
+    position: fixed;
+    top: 0;
+    right: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: rgb(51, 50, 50);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 20px;
+    transition: right 0.3s ease;
+  }
+
+  .closeBtn {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    display: block;
+    filter: invert(50%);
+  }
+
+  #mobileNav {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  #mobileNav a {
+    color: #fff;
+    text-decoration: none;
+    font-family: 'NotoSansGeorgian-Light';
+  }
+
+  /* Additional styles for the hamburger icon button */
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 10px;
+  }
+
+  .line {
+    height: 4px;
+    width: 30px;
+    background-color: #fff;
+    margin: 6px 0;
+  }
+
+  #mobileNav :nth-child(3) {
+    color: #00A3E0; 
+  }
+
+  main {
+    height: 265px;
+   
+  }
+  .titleDiv {
+    width: 90%;
+  }
+
+  .title h1 {
+    font-size: 30px;
+  }
+
+  .desc {
+    width: 90%;
+  }
+
+  .desc h1 {
+    font-size: 22px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+  }
+
+  .trainingCourses {
+    width: 90%;
+    margin-top: 40px;
+    margin-bottom: 35px;
+  }
+
+  .allCards {
+    flex-direction: column;
+    width: 90%;
+  }
+
+  .singleCard {
+    width: 100%;
+    min-height: 320px;
+  }
+
+  .arrowDetails {
+    margin-top: 28px;
+  }
+
+  .cardBody {
+    padding: 24px;
+  }
+
+  
+.prev-btn,
+.next-btn{
+  display: none;
+}
+
+.ppWords {
+  width: 90%;
+}
+
+.imgs {
+  flex-direction: column;
+  height: 150px;
+  row-gap: 10px;
+}
+
+.test {
+  margin-right: 0;
+  /* height: 0; */
+}
+
+.indicators {
+  bottom: 15px;
+}
+
+.faqDiv {
+  width: 90%;
+}
+
+.allQues {
+  font-size: 14px;
+}
+
+.tbcAndFb {
+  width: 90%;
+}
+
+.c {
+  width: 90%;
+}
+
+.rules {
+  width: 90%;
+}
+.rules button {
+  margin-top: -5px;
+}
+
+}
+
+
+
+
+
+
+
+
+
+  @media only screen and (min-width: 768px) and (max-width: 1023px) { 
+
+    .imgs {
+      display: flex;
+      flex-direction: row;
+    }
+    .headerDiv {
+      width: 98%;
+    }
+    .title h1 {
+      font-size: 30px;
+    }
+    .titleDiv {
+      width: 98%;
+    }
+
+    .desc {
+      width: 98%;
+    }
+
+    .desc h1 {
+      font-size: 23px;
+    }
+     
+    .test {
+      margin-right: 25px; 
+    }
+     /*  */
+    .tegeta {
+      margin-left: -160px;
+    }
+
+    .usaid {
+      margin-left: -160px;
+    }
+
+    /* .tineti {
+      width: 150px;
+      height: 50PX;
+    } */
+    .closeBtn {
+      display: none;
+      filter: invert(50%);
+    }
+    .trainingCourses {
+      width: 98%;
+      margin-top: 40px;
+      margin-bottom: 35px;
+    }
+  
+    .allCards {
+      /* flex-direction: column; */
+      width: 98%;
+    }
+
+    .ppWords {
+      width: 98%;
+    }
+    /* .forImages {
+      width: 90%;
+    }
+    .imgs {
+      
+    } */
+
+    .faqDiv {
+      width: 98%;
+    }
+    
+    .tbcAndFb {
+      width: 98%;
+    }
+    
+    .c {
+      width: 98%;
+    }
+    
+    .rules {
+      width: 98%;
+    }
   }
 
 
-  /* @media screen and (min-width: 767px) {} */
+ 
