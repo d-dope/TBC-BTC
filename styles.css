@@ -111,7 +111,7 @@ nav a {
 
   main {
     height: 352px;
-    background-image: url('/assets/images/mainCover.webp');
+    background-image: url('assets/images/mainCover.webp');
     object-fit: cover;
 
     margin-top: -1px;
